@@ -54,7 +54,7 @@ const ContainerTechs = styled.div`
     flex-direction: column;
 `
 
-const Tech = styled.a`
+const Tech = styled.div`
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -79,11 +79,6 @@ const Image = styled.img`
 const TechTitle = styled.span`
     font-size: 1.8rem;
     color: var(--text-1);
-    transition: all 0.4s;
-
-    ${Tech}:hover & {
-        color: var(--primary-1);
-    }
 `
 
 const Skill = props => {
@@ -97,13 +92,13 @@ const Skill = props => {
                         </ContainerImage>
                         <TechTitle>HTML5</TechTitle>
                     </Tech>
-                    <Tech href="https://sass-lang.com/" target="_blank" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={sass} alt="SASS/SCSS" title="SASS/SCSS" />
                         </ContainerImage>
                         <TechTitle>SASS/SCSS</TechTitle>
                     </Tech>
-                    <Tech href="https://styled-components.com/" target="_blank" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={styled_comp} alt="Styled Components" title="Styled Components" />
                         </ContainerImage>
@@ -115,13 +110,13 @@ const Skill = props => {
                         </ContainerImage>
                         <TechTitle>Javascript</TechTitle>
                     </Tech>
-                    <Tech href="https://reactjs.org/" target="_blank" className="tech" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={react} alt="React Native" title="React Native" />
                         </ContainerImage>
                         <TechTitle>React & React Native</TechTitle>
                     </Tech>
-                    <Tech href="https://redux.js.org/" target="_blank" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={redux} alt="Redux" title="Redux" />
                         </ContainerImage>
@@ -137,13 +132,13 @@ const Skill = props => {
                         </ContainerImage>
                         <TechTitle>Node.js</TechTitle>
                     </Tech>
-                    <Tech href="https://sass-lang.com/" target="_blank" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={express} alt="Express.js" title="Express.js" />
                         </ContainerImage>
                         <TechTitle>Express.js</TechTitle>
                     </Tech>
-                    <Tech href="https://styled-components.com/" target="_blank" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={graphql} alt="GraphQL" title="GraphQL" />
                         </ContainerImage>
@@ -155,7 +150,7 @@ const Skill = props => {
                         </ContainerImage>
                         <TechTitle>MongoDB</TechTitle>
                     </Tech>
-                    <Tech href="https://reactjs.org/" target="_blank" className="tech" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={mysql} alt="MySQL" title="MySQL" />
                         </ContainerImage>
@@ -171,13 +166,13 @@ const Skill = props => {
                         </ContainerImage>
                         <TechTitle>Adobe Photoshop</TechTitle>
                     </Tech>
-                    <Tech href="https://sass-lang.com/" target="_blank" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={sketch} alt="Sketch" title="Sketch" />
                         </ContainerImage>
                         <TechTitle>Sketch</TechTitle>
                     </Tech>
-                    <Tech href="https://styled-components.com/" target="_blank" rel="noreferrer">
+                    <Tech>
                         <ContainerImage>
                             <Image src={figma} alt="Figma" title="Figma" />
                         </ContainerImage>
