@@ -227,7 +227,7 @@ const Home = () => {
                             "A Product Designer lover"
                         ]}
                     />
-                    <Button to="projects" spy={true} smooth={true} offset={-185}>
+                    <Button to="projects" spy={true} smooth={true} offset={-180}>
                         Projects
                     </Button>
                 </Bloco>
