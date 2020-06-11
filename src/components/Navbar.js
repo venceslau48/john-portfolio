@@ -8,7 +8,7 @@ const Nav = styled.nav`
     position: fixed;
     top: 0;
     width: 100%;
-    min-height: 8vh;
+    min-height: 8rem;
     background: var(--bg-1);
     z-index: 1;
     padding: 0.5rem 6rem;
@@ -19,7 +19,6 @@ const Nav = styled.nav`
     align-items: center;
 
     @media ${props => props.theme.bp.small} {
-        min-height: 9vh;
         padding: 0.5rem 2rem;
     }
 `
@@ -51,7 +50,7 @@ const List = styled.ul`
         right: ${({ openNav }) => (openNav ? "0" : "-200%")};
         position: absolute;
         background: var(--bg-1);
-        top: 8vh;
+        top: 8rem;
         height: 100vh;
         transition: all 0.6s ease-in-out;
     }

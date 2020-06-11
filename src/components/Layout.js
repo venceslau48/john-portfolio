@@ -12,9 +12,8 @@ const Wrapper = styled.div`
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    background: var(--background);
-    color: var(--text);
-    transition: color 0.2s ease-out, background 0.2s ease-out;
+    color: var(--text-1);
+    transition: all 0.4s;
 `
 
 const Container = styled.main`
@@ -23,28 +22,18 @@ const Container = styled.main`
     flex: 1;
 `
 
-const Layout = ({ notOnePageSection, children, selectTheme_1, selectTheme_2, selectTheme_3 }) => {
-    // FIX VH ON MOBILE
-    const changeVhVariable = () => {
-        const vh = typeof window !== "undefined" && window.innerHeight * 0.01
-        typeof document !== "undefined" && document.documentElement.style.setProperty("--vh", `${vh}px`)
-    }
-
+const Layout = ({ children }) => {
     // Change the VH variable when the browser is resized
     useEffect(() => {
-        changeVhVariable()
+        const vh = typeof window !== "undefined" && window.innerHeight * 0.01
+        typeof document !== "undefined" && document.documentElement.style.setProperty("--vh", `${vh}px`)
     }, [])
 
     return (
         <ThemeProvider theme={theme}>
             <Wrapper>
                 <SEO />
-                <Navbar
-                    notOnePageSection={notOnePageSection}
-                    selectTheme_1={selectTheme_1}
-                    selectTheme_2={selectTheme_2}
-                    selectTheme_3={selectTheme_3}
-                />
+                <Navbar />
                 <Container>{children}</Container>
                 <GlobalStyles />
             </Wrapper>

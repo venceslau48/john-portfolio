@@ -8,7 +8,7 @@ var ReactRotatingText = require("react-rotating-text")
 
 const Container = styled.div`
     background: var(--bg-1);
-    height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     transition: all 0.4s;
     animation: transition 1.5s ease;
     display: flex;
@@ -42,6 +42,7 @@ const Container = styled.div`
 
         @media ${props => props.theme.bp.small} {
             transform: scaleX(1);
+            height: 95%;
         }
 
         @media ${props => props.theme.bp.smaller} {
@@ -80,6 +81,7 @@ const Container = styled.div`
 
         @media ${props => props.theme.bp.small} {
             transform: scaleX(1);
+            height: 100%;
         }
 
         @media ${props => props.theme.bp.smaller} {
@@ -99,14 +101,6 @@ const Container = styled.div`
             opacity: 1;
         }
     }
-
-    @media ${props => props.theme.bp.large} {
-        height: 80vh;
-    }
-
-    @media ${props => props.theme.bp.smaller} {
-        height: 100vh;
-    }
 `
 
 const Info = styled.div`
@@ -116,6 +110,18 @@ const Info = styled.div`
     position: relative;
     top: -10rem;
     z-index: 2;
+    animation: moveUp 1.5s;
+
+    @keyframes moveUp {
+        from {
+            opacity: 0;
+            transform: translateX(-4rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
     @media ${props => props.theme.bp.medium} {
         max-width: 92%;

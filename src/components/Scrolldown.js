@@ -25,10 +25,6 @@ const Container = styled.div`
         transform: translate(-50%, 1px);
     }
 
-    @media ${props => props.theme.bp.small} {
-        bottom: -8rem;
-    }
-
     @media ${props => props.theme.bp.smaller} {
         display: none;
     }
