@@ -1,7 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
-import Project from "../components/Project"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
+import Project from "../components/Project";
 
 const Container = styled.div`
     background: var(--bg-1);
@@ -17,19 +17,19 @@ const Container = styled.div`
     @media ${props => props.theme.bp.medium} {
         max-width: 92%;
     }
-`
+`;
 
 const StyledProjects = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-`
+`;
 
 const BlocoInfo = styled.div`
     display: block;
     margin-bottom: 8rem;
-`
+`;
 
 const Title = styled.h1`
     font-size: 6rem;
@@ -40,7 +40,7 @@ const Title = styled.h1`
     @media ${props => props.theme.bp.smallest} {
         font-size: 4rem;
     }
-`
+`;
 
 const Description = styled.span`
     font-size: 2.8rem;
@@ -49,7 +49,7 @@ const Description = styled.span`
     max-width: 75em;
     display: block;
     margin-top: 2rem;
-`
+`;
 
 const Listagem = styled.div`
     @media ${props => props.theme.bp.large} {
@@ -57,7 +57,7 @@ const Listagem = styled.div`
         flex-direction: column;
         align-items: center;
     }
-`
+`;
 
 const Projects = () => {
     const { allFile: items } = useStaticQuery(graphql`
@@ -68,7 +68,7 @@ const Projects = () => {
                     extension: { eq: "md" }
                     relativeDirectory: { regex: "/projects/" }
                 }
-                sort: { fields: [dir], order: DESC }
+                sort: { fields: [id] }
             ) {
                 edges {
                     node {
@@ -77,10 +77,11 @@ const Projects = () => {
                             frontmatter {
                                 title
                                 link
+                                source
                                 stack
                                 image {
                                     childImageSharp {
-                                        fluid(maxWidth: 800, quality: 80) {
+                                        fluid(maxWidth: 1200, quality: 80) {
                                             ...GatsbyImageSharpFluid_tracedSVG
                                         }
                                     }
@@ -92,7 +93,7 @@ const Projects = () => {
                 }
             }
         }
-    `)
+    `);
 
     return (
         <Container id="projects">
@@ -103,12 +104,15 @@ const Projects = () => {
                 </BlocoInfo>
                 <Listagem>
                     {items.edges.map(item => (
-                        <Project key={item.node.id} proj={item.node.childMarkdownRemark} />
+                        <Project
+                            key={item.node.id}
+                            proj={item.node.childMarkdownRemark}
+                        />
                     ))}
                 </Listagem>
             </StyledProjects>
         </Container>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;
