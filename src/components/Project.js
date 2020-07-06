@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 
 const Container = styled.div`
     width: 100%;
+    /* height: 36rem; */
     background: var(--bg-1);
     margin-bottom: 8rem;
     display: flex;
@@ -41,7 +42,15 @@ const Description = styled.div`
 `;
 
 const ContainerImage = styled.div`
-    width: 100%;
+   flex: 1;
+
+    /* @media ${props => props.theme.bp.medium} {
+        width: 45rem;
+    }
+
+    @media only screen and (max-width: 68.75em) {
+        width: 40rem;
+    } */
 `;
 
 const Image = styled(Img)`
@@ -49,7 +58,7 @@ const Image = styled(Img)`
 `;
 
 const Info = styled.div`
-    flex: 0 0 55%;
+    flex: 0 0 60%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

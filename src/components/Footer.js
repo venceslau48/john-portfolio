@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
     display: block;
@@ -9,12 +9,12 @@ const Container = styled.div`
     left: 50%;
     transform: translateX(-50%) translateY(4rem);
     z-index: 3;
-`
+`;
 
 const Description = styled.span`
     color: #fff;
     font-size: 1.6rem;
-`
+`;
 
 const Heart = styled.span`
     background-color: #ca1d1b;
@@ -67,16 +67,16 @@ const Heart = styled.span`
             transform: rotate(-45deg) scale(0.9);
         }
     }
-`
+`;
 
 const Footer = () => {
     return (
         <Container>
             <Description>
-                Made with <Heart /> by João
+                Made with <Heart /> by João - Copyright @ 2020
             </Description>
         </Container>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
