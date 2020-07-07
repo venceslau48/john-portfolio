@@ -6,4 +6,4 @@
 
 Personal portfolio created with Gatbsy, Styled Components and GraphQL.
 
-Developed by John Vences - copyright @ 2020
+Developed by [John Vences](https://github.com/venceslau48) - copyright @ 2020
