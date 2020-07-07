@@ -6,4 +6,5 @@ image: "weather_bg.png"
 source: "https://github.com/venceslau48/john-weather"
 ---
 
-Everybody does this app! It's simple but give us some knowledge and more experience to work with RESTful API's.
+Small and simple application that shows the temperature and some weather conditions of a given city surveyed.
+In this case I used axios for calls to the api.

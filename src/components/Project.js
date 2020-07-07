@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { ButtonGitHub, ButtonUrl } from "./Buttons";
 
 const Container = styled.div`
     width: 100%;
-    /* height: 36rem; */
     background: var(--bg-1);
     margin-bottom: 8rem;
     display: flex;
@@ -42,15 +42,7 @@ const Description = styled.div`
 `;
 
 const ContainerImage = styled.div`
-   flex: 1;
-
-    /* @media ${props => props.theme.bp.medium} {
-        width: 45rem;
-    }
-
-    @media only screen and (max-width: 68.75em) {
-        width: 40rem;
-    } */
+    flex: 1;
 `;
 
 const Image = styled(Img)`
@@ -58,7 +50,7 @@ const Image = styled(Img)`
 `;
 
 const Info = styled.div`
-    flex: 0 0 60%;
+    flex: 0 0 55%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -116,8 +108,6 @@ const Demo = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* position: absolute;
-    bottom: 4rem; */
 
     @media ${props => props.theme.bp.smallest} {
         position: initial;
@@ -129,16 +119,17 @@ const Demo = styled.div`
 
 const OutsideLink = styled.a`
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
     background: var(--primary-1);
-    padding: 0.7rem;
+    padding: 0.7rem 0;
     font-weight: 600;
     border-radius: 4px;
     text-decoration: none;
-    display: block;
-    width: 10rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
     text-shadow: var(--text-shadow);
 
     &:hover {
@@ -149,12 +140,17 @@ const OutsideLink = styled.a`
     &:last-child {
         margin-left: 2rem;
     }
+
+    svg {
+        height: 1.6rem;
+        margin-right: 0.5rem;
+    }
 `;
 
 const BoxSkew = styled.div`
     width: 100%;
     height: 100%;
-    transform: skewX(0);
+    transform: skewX(20deg);
     position: absolute;
     top: 0;
     right: 0;
@@ -200,6 +196,7 @@ const Project = ({ proj }) => {
                             target="_blank"
                             rel="noreferrer"
                         >
+                            <ButtonUrl />
                             Visit
                         </OutsideLink>
                         <OutsideLink
@@ -207,6 +204,7 @@ const Project = ({ proj }) => {
                             target="_blank"
                             rel="noreferrer"
                         >
+                            <ButtonGitHub />
                             Source
                         </OutsideLink>
                     </Demo>

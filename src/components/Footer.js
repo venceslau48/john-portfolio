@@ -73,7 +73,7 @@ const Footer = () => {
     return (
         <Container>
             <Description>
-                Made with <Heart /> by João - Copyright @ 2020
+                Made with <Heart /> by John Vences - Copyright @ 2020
             </Description>
         </Container>
     );
