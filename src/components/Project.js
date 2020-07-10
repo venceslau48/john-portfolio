@@ -117,34 +117,44 @@ const Demo = styled.div`
     }
 `;
 
-const OutsideLink = styled.a`
-    color: #fff;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    background: var(--primary-1);
-    padding: 0.7rem 0;
-    font-weight: 600;
+const ButtonVisit = styled.a`
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    border: 2px solid transparent;
     border-radius: 4px;
-    text-decoration: none;
+    background: var(--primary-1);
+    color: white;
+    font-weight: 600;
+    width: 12rem;
+    font-size: 1.35rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 12rem;
-    text-shadow: var(--text-shadow);
+    text-decoration: none;
+    transition: transform 0.4s;
 
     &:hover {
-        background: var(--primary-2);
-        transition: background-color 0.5s linear;
+        transform: translateY(-0.4rem);
+        box-shadow: 0.3rem 0.3rem 0.7rem rgba(46, 41, 78, 0.15);
     }
 
-    &:last-child {
-        margin-left: 2rem;
+    &:focus,
+    &:visited {
+        outline: none;
     }
 
     svg {
-        height: 1.6rem;
+        width: 1.4rem;
+        height: 1.4rem;
         margin-right: 0.5rem;
     }
+`;
+
+const ButtonSource = styled(ButtonVisit)`
+    margin-left: 2rem;
+    border: 2px solid var(--primary-1);
+    background: transparent !important;
+    color: var(--primary-1);
 `;
 
 const BoxSkew = styled.div`
@@ -191,22 +201,22 @@ const Project = ({ proj }) => {
                         <Code>{stack}</Code>
                     </Tags>
                     <Demo>
-                        <OutsideLink
+                        <ButtonVisit
                             href={link}
                             target="_blank"
                             rel="noreferrer"
                         >
                             <ButtonUrl />
                             Visit
-                        </OutsideLink>
-                        <OutsideLink
+                        </ButtonVisit>
+                        <ButtonSource
                             href={source}
                             target="_blank"
                             rel="noreferrer"
                         >
                             <ButtonGitHub />
                             Source
-                        </OutsideLink>
+                        </ButtonSource>
                     </Demo>
                     <BoxSkew />
                     <BoxSkewInverted />

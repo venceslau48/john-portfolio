@@ -1,10 +1,14 @@
-import React from "react"
-import styled from "styled-components"
-import cv from "../../static/curriculum.pdf"
-import Service from "../components/Service"
-import design from "../images/about/design.svg"
-import creativity from "../images/about/creativity.svg"
-import code from "../images/about/code.svg"
+import React from "react";
+import styled from "styled-components";
+import cv from "../../static/curriculum.pdf";
+import Service from "../components/Service";
+import design from "../images/about/design.svg";
+import creativity from "../images/about/creativity.svg";
+import code from "../images/about/code.svg";
+import {
+    ButtonCV as IconCV,
+    ButtonLinkedin as IconLinkedin
+} from "../components/Buttons";
 
 const Container = styled.div`
     background: var(--bg-1);
@@ -16,7 +20,7 @@ const Container = styled.div`
     @media ${props => props.theme.bp.large} {
         padding: 5rem 0;
     }
-`
+`;
 
 const Info = styled.div`
     position: relative;
@@ -26,7 +30,7 @@ const Info = styled.div`
     @media ${props => props.theme.bp.medium} {
         max-width: 92%;
     }
-`
+`;
 
 const Bloco = styled.div`
     width: 75%;
@@ -34,7 +38,7 @@ const Bloco = styled.div`
     @media ${props => props.theme.bp.small} {
         width: 100%;
     }
-`
+`;
 
 const Titulo = styled.h1`
     font-size: 6rem;
@@ -45,7 +49,7 @@ const Titulo = styled.h1`
     @media ${props => props.theme.bp.smallest} {
         font-size: 4rem;
     }
-`
+`;
 
 const Description = styled.span`
     font-size: 2.8rem;
@@ -58,13 +62,13 @@ const Description = styled.span`
     @media ${props => props.theme.bp.smallest} {
         font-size: 2.5rem;
     }
-`
+`;
 
 const Controlos = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-`
+`;
 
 const ButtonCV = styled.a`
     padding: 0.7rem 1rem;
@@ -74,11 +78,12 @@ const ButtonCV = styled.a`
     background: var(--primary-1);
     color: white;
     font-weight: 600;
-    width: 12rem;
+    width: 14rem;
     font-size: 1.4rem;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 4rem;
-    text-align: center;
     text-decoration: none;
     transition: transform 0.4s;
 
@@ -91,14 +96,20 @@ const ButtonCV = styled.a`
     &:visited {
         outline: none;
     }
-`
+
+    svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-right: 0.5rem;
+    }
+`;
 
 const ButtonLinkedin = styled(ButtonCV)`
     margin-left: 2rem;
     border: 2px solid var(--primary-1);
     background: transparent !important;
     color: var(--primary-1);
-`
+`;
 
 const Services = styled.div`
     display: grid;
@@ -114,7 +125,7 @@ const Services = styled.div`
     @media ${props => props.theme.bp.smallest} {
         width: 100%;
     }
-`
+`;
 
 const About = () => {
     return (
@@ -123,19 +134,22 @@ const About = () => {
                 <Bloco>
                     <Titulo>About me</Titulo>
                     <Description>
-                        I work as a Web Developer, participating in the whole life of a project, from designing the idea
-                        to publishing it on the server. My passion is to transform the ideas of my clients into
-                        something special and unique.
+                        I work as a Web Developer, participating in the whole
+                        life of a project, from designing the idea to publishing
+                        it on the server. My passion is to transform the ideas
+                        of my clients into something special and unique.
                     </Description>
                     <Controlos>
                         <ButtonCV href={cv} target="_blank">
+                            <IconCV />
                             Curriculum
                         </ButtonCV>
                         <ButtonLinkedin
-                            href="https://www.linkedin.com/in/darthvences/"
+                            href="https://www.linkedin.com/in/johnvences/"
                             target="_blank"
                             rel="noreferrer"
                         >
+                            <IconLinkedin />
                             LinkedIn
                         </ButtonLinkedin>
                     </Controlos>
@@ -159,7 +173,7 @@ const About = () => {
                 </Services>
             </Info>
         </Container>
-    )
-}
+    );
+};
 
-export default About
+export default About;
